@@ -2,27 +2,31 @@
 
 [ext_resource type="Script" uid="uid://cmdl6qfn8d68a" path="res://coin.gd" id="1_0t63x"]
 
-[sub_resource type="Gradient" id="Gradient_d5gmh"]
-colors = PackedColorArray(0.979298, 1, 0.0536458, 1, 0.9625, 1, 0, 0)
-
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0t63x"]
-gradient = SubResource("Gradient_d5gmh")
-fill = 1
-fill_from = Vector2(0.501424, 0.532764)
+fill_from = Vector2(0.532764, 0.518519)
 fill_to = Vector2(0.809117, 0.19943)
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_d5gmh"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7lbm"]
-size = Vector2(115.591, 143.514)
+size = Vector2(81.5125, 102.065)
 
 [node name="Coin" type="Area2D"]
 script = ExtResource("1_0t63x")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CircleSprite" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-0.500001, 3.78489e-06)
 scale = Vector2(0.828125, 0.875)
 texture = SubResource("GradientTexture2D_0t63x")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.918229, 0.898956, 0.147299, 1)
+position = Vector2(-1, -1)
+scale = Vector2(26, 29)
+texture = SubResource("CanvasTexture_d5gmh")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.23446, -0.121939)
+position = Vector2(-0.5, -2)
 scale = Vector2(0.453918, 0.391906)
 shape = SubResource("RectangleShape2D_p7lbm")
