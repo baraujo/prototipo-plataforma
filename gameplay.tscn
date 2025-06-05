@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfpjpwat0bqgx"]
+
+[ext_resource type="PackedScene" uid="uid://wajdqjc6r6eh" path="res://player.tscn" id="1_oe8ih"]
+[ext_resource type="PackedScene" uid="uid://d3igq0rcdusmu" path="res://platform.tscn" id="2_xuee5"]
+[ext_resource type="PackedScene" uid="uid://b2fsl1iw16k4x" path="res://coin.tscn" id="3_smepj"]
+[ext_resource type="Script" uid="uid://blrsgpgc03q5b" path="res://kill_volume.gd" id="4_xuee5"]
+
+[sub_resource type="Gradient" id="Gradient_p7lbm"]
+colors = PackedColorArray(0.123631, 0.108372, 0.18125, 1, 0.247929, 0.0117985, 0.686458, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rvmsc"]
+gradient = SubResource("Gradient_p7lbm")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smepj"]
+size = Vector2(1984, 20)
+
+[node name="Sandbox" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(544.5, 145.5)
+scale = Vector2(11.28, 2000)
+texture = SubResource("GradientTexture1D_rvmsc")
+
+[node name="Player" parent="." instance=ExtResource("1_oe8ih")]
+position = Vector2(566, 141)
+JUMP_VELOCITY = -600.0
+
+[node name="Platform" parent="." instance=ExtResource("2_xuee5")]
+position = Vector2(585, 413)
+
+[node name="Platform2" parent="." instance=ExtResource("2_xuee5")]
+position = Vector2(1154, 244)
+
+[node name="Platform3" parent="." instance=ExtResource("2_xuee5")]
+position = Vector2(-34, 250)
+
+[node name="Coin" parent="." instance=ExtResource("3_smepj")]
+position = Vector2(1035, 155)
+
+[node name="Coin2" parent="." instance=ExtResource("3_smepj")]
+position = Vector2(774, 328)
+
+[node name="Coin3" parent="." instance=ExtResource("3_smepj")]
+position = Vector2(394, 338)
+
+[node name="Coin4" parent="." instance=ExtResource("3_smepj")]
+position = Vector2(33, 178)
+
+[node name="KillVolume" type="Area2D" parent="."]
+position = Vector2(599, 708)
+script = ExtResource("4_xuee5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillVolume"]
+position = Vector2(158, 0)
+shape = SubResource("RectangleShape2D_smepj")

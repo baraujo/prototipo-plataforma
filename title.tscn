@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://buiy3d2mf7xbw"]
+
+[ext_resource type="Script" uid="uid://c3qov6tjvnxuj" path="res://title.gd" id="1_y7k74"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_y7k74"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_y7k74")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0550304, 0.093291, 0.426042, 1)
+position = Vector2(688, 394)
+scale = Vector2(1496, 888)
+texture = SubResource("CanvasTexture_y7k74")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 282.0
+offset_top = 194.0
+offset_right = 1120.0
+offset_bottom = 335.0
+theme_override_font_sizes/normal_font_size = 80
+text = "Jogo de plataforma"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 244.0
+offset_top = 599.0
+offset_right = 1259.0
+offset_bottom = 697.0
+theme_override_font_sizes/normal_font_size = 64
+text = "Pressione espaço para iniciar"

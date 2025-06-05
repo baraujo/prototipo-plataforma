@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://duqfx6yv33no6"]
+
+[ext_resource type="Script" uid="uid://b0v56b58n7ddg" path="res://lose.gd" id="1_rtc1j"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oocul"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_rtc1j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.394792, 0.0674436, 0.0674436, 1)
+position = Vector2(688, 394)
+scale = Vector2(1496, 888)
+texture = SubResource("CanvasTexture_oocul")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 282.0
+offset_top = 194.0
+offset_right = 1120.0
+offset_bottom = 335.0
+theme_override_font_sizes/normal_font_size = 80
+text = "Você perdeu!"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 95.0
+offset_top = 604.0
+offset_right = 1287.0
+offset_bottom = 702.0
+theme_override_font_sizes/normal_font_size = 64
+text = "Pressione espaço para voltar ao título"
