@@ -1,10 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2fsl1iw16k4x"]
+[gd_scene load_steps=4 format=3 uid="uid://b2fsl1iw16k4x"]
 
-[ext_resource type="Script" uid="uid://cmdl6qfn8d68a" path="res://coin.gd" id="1_0t63x"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_0t63x"]
-fill_from = Vector2(0.532764, 0.518519)
-fill_to = Vector2(0.809117, 0.19943)
+[ext_resource type="Script" uid="uid://cmdl6qfn8d68a" path="res://scripts/coin.gd" id="1_0t63x"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_d5gmh"]
 
@@ -14,13 +10,7 @@ size = Vector2(81.5125, 102.065)
 [node name="Coin" type="Area2D"]
 script = ExtResource("1_0t63x")
 
-[node name="CircleSprite" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-0.500001, 3.78489e-06)
-scale = Vector2(0.828125, 0.875)
-texture = SubResource("GradientTexture2D_0t63x")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.918229, 0.898956, 0.147299, 1)
 position = Vector2(-1, -1)
 scale = Vector2(26, 29)
@@ -30,3 +20,5 @@ texture = SubResource("CanvasTexture_d5gmh")
 position = Vector2(-0.5, -2)
 scale = Vector2(0.453918, 0.391906)
 shape = SubResource("RectangleShape2D_p7lbm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

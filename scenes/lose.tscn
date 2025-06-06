@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://duqfx6yv33no6"]
 
-[ext_resource type="Script" uid="uid://b0v56b58n7ddg" path="res://lose.gd" id="1_rtc1j"]
+[ext_resource type="Script" uid="uid://difgw1ebnpu67" path="res://scripts/game_over.gd" id="1_vjdtf"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_oocul"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_rtc1j")
+[node name="Lose" type="Node2D"]
+script = ExtResource("1_vjdtf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.394792, 0.0674436, 0.0674436, 1)

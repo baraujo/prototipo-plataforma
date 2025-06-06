@@ -1,23 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfpjpwat0bqgx"]
+[gd_scene load_steps=6 format=3 uid="uid://cfpjpwat0bqgx"]
 
-[ext_resource type="PackedScene" uid="uid://wajdqjc6r6eh" path="res://player.tscn" id="1_oe8ih"]
-[ext_resource type="PackedScene" uid="uid://d3igq0rcdusmu" path="res://platform.tscn" id="2_xuee5"]
-[ext_resource type="PackedScene" uid="uid://b2fsl1iw16k4x" path="res://coin.tscn" id="3_smepj"]
-[ext_resource type="Script" uid="uid://blrsgpgc03q5b" path="res://kill_volume.gd" id="4_xuee5"]
+[ext_resource type="PackedScene" uid="uid://wajdqjc6r6eh" path="res://scenes/player.tscn" id="1_oe8ih"]
+[ext_resource type="PackedScene" uid="uid://d3igq0rcdusmu" path="res://scenes/platform.tscn" id="2_xuee5"]
+[ext_resource type="PackedScene" uid="uid://b2fsl1iw16k4x" path="res://scenes/coin.tscn" id="3_smepj"]
+[ext_resource type="PackedScene" uid="uid://blql681is34b7" path="res://scenes/kill_volume.tscn" id="4_ct7aa"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_xuee5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_smepj"]
-size = Vector2(1984, 20)
-
-[node name="Sandbox" type="Node2D"]
+[node name="Gameplay" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.119036, 0, 0.340104, 1)
 position = Vector2(544.5, 145.5)
 scale = Vector2(3060.46, 2040.61)
 texture = SubResource("CanvasTexture_xuee5")
-metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_oe8ih")]
 position = Vector2(566, 141)
@@ -39,15 +35,11 @@ position = Vector2(1241, 194)
 position = Vector2(774, 394)
 
 [node name="Coin3" parent="." instance=ExtResource("3_smepj")]
-position = Vector2(387, 408)
+position = Vector2(379, 396)
 
 [node name="Coin4" parent="." instance=ExtResource("3_smepj")]
 position = Vector2(-137, 202)
 
-[node name="KillVolume" type="Area2D" parent="."]
-position = Vector2(599, 708)
-script = ExtResource("4_xuee5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillVolume"]
-position = Vector2(158, 0)
-shape = SubResource("RectangleShape2D_smepj")
+[node name="KillVolume" parent="." instance=ExtResource("4_ct7aa")]
+position = Vector2(370, 694)
+scale = Vector2(3.16, 1)

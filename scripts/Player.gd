@@ -30,4 +30,4 @@ func collect_coin():
     coin_count += 1
     if coin_count == 4:
         print("Collected all coins!")
-        get_tree().change_scene_to_file("res://win.tscn")
+        get_tree().change_scene_to_file("res://scenes/win.tscn")
